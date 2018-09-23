@@ -1,4 +1,4 @@
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,8 +16,6 @@
 </head>
 <body onload="">
     <div class="mainContent">
-        <h1 id="logged_id">Logged ID: </h1>
-        <script>pageLoad(document.getElementById("logged_id"));</script>
         <div>Temperature setting should be &ge;10 and &le;35</div>
         <input type="number" id="temp" value="15" onkeyup="checkParameter(this.value)" min="10" max="35">
         <div id="tempWarning"></div><br>
@@ -36,6 +34,8 @@
             tempWarning.innerHTML = "";
         }
     }
+
+    updateStatus("AX001");
 </script>
 </body>
 </html>

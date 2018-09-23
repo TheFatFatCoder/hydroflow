@@ -1,35 +1,64 @@
-function pageLoad(item){
-    const logged_id = item;
-    var ref = firebase.database().ref('devices').child("AX001");
-    ref.on('value', function(snapshot){
-      var logged_value = snapshot.val();
-      //console.log(logged_value);
-      logged_id.innerHTML = logged_value.owner;
-    });
-}
+function fetchAll(item, device_id){
+    var ref = firebase.database().ref('devices').child(device_id);
+    ref.once('value', function(snapshot){
+      status = snapshot.val();
+      const temperatureInfo = item.getElementById("temperatureInfo");
+      const lightHrsInfo = item.getElementById("lightHrsInfo");
+      const lightStatusInfo = item.getElementById("lightStatusInfo");
+      
+      var currTemp = status.currTemp.split("=")[1];
+      var totalLight = status.totalLight.split("=")[1];
+      var currLight = status.currLight.split("=")[1];
+      if  (currTemp == "null")
+          temperatureInfo.innerHTML = "N/A";
+      else
+          temperatureInfo.innerHTML = currTemp;
 
-function getStatus(){
-    const logged_id = document.getElementById("logged_id");
-    var ref = firebase.database().ref('devices').child("AX001");
+      if  (totalLight == "null")
+          lightHrsInfo.innerHTML = "N/A";
+      else 
+          lightHrsInfo.innerHTML = totalLight;
+
+      if  (currLight == "null")
+          lightStatusInfo.innerHTML = "N/A";
+      else
+          lightStatusInfo.innerHTML = currLight;
+      
+    });    
+  }
+
+function listenAll(item, device_id){
+    var ref = firebase.database().ref('devices').child(device_id);
     ref.on('child_changed', function(snapshot){
-        /*snapshot.forEach(function(childSnapshot){
-          var childData = childSnapshot.val();
-          console.log(childData);
-      });*/
-      console.log(snapshot.val());
-      logged_id.innerHTML = snapshot.val();
+        var attr = snapshot.val().split("=")[0];
+        var res = snapshot.val().split("=")[1];
+        
+        const temperatureInfo = item.getElementById("temperatureInfo");
+        const lightHrsInfo = item.getElementById("lightHrsInfo");
+        const lightStatusInfo = item.getElementById("lightStatusInfo");
+
+        switch  (attr){
+            case "currTemp": if (res=="null")temperatureInfo.innerHTML ="N/A"; else temperatureInfo.innerHTML = res;
+                    break;
+            case "currLight": if (res=="null")lightStatusInfo.innerHTML ="N/A"; else lightStatusInfo.innerHTML = res;
+                    break;
+            case "totalLight": if (res=="null")lightHrsInfo.innerHTML ="N/A"; else lightHrsInfo.innerHTML = res;
+                    break;
+        }
     });
 }
-getStatus();
 
 function writeData(data){
     firebase.database().ref("devices").child("AX001").set({
-        device: "AX001",
-        owner: "sysdev",
-        minTemp: 15,
-        maxTemp: 35,
-        minHr: "08.00",
-        maxHr: "22.00"
+        device: "device=AX001",
+        owner: "owner=john",
+        minTemp:  "minTemp=15",
+        maxTemp: "maxTemp=35",
+        lightStart: "lightStart=8",
+        totalLight: "totalLight=16",
+        currTemp: "currTemp=null",
+        currLight: "currLight=null"
+
     }, function(error){
         if  (error){
             alert("Write Data Failed. Error: "+error);
