@@ -15,6 +15,7 @@
 </head>
 <body>
     <div class="mainContent">
+        <h1 id="logged_id">Logged ID: </h1>
         <div>Temperature setting should be >=10 and <=35</div>
         <input type="number" id="temp" value="15" onkeyup="checkParameter(this.value)" min="10" max="35">
         <div id="tempWarning"></div><br>
@@ -35,6 +36,31 @@
     firebase.initializeApp(config);
 </script>
 <script>
+    function pageLoad(){
+      const logged_id = document.getElementById("logged_id");
+      var ref = firebase.database().ref('devices').child("AX001");
+      ref.on('value', function(snapshot){
+        var logged_value = snapshot.val();
+        //console.log(logged_value);
+        logged_id.innerHTML = logged_value.owner;
+      });
+    }
+    pageLoad();
+
+    function getStatus(){
+      const logged_id = document.getElementById("logged_id");
+      var ref = firebase.database().ref('devices').child("AX001");
+      ref.on('child_changed', function(snapshot){
+          /*snapshot.forEach(function(childSnapshot){
+            var childData = childSnapshot.val();
+            console.log(childData);
+        });*/
+        console.log(snapshot.val());
+        logged_id.innerHTML = snapshot.val();
+      });
+    }
+    getStatus();
+    
     function checkParameter(param){
     const submitButton = document.getElementById("submitButton");
     const tempWarning = document.getElementById("tempWarning");
@@ -48,8 +74,11 @@
     }
 
     function writeData(data){
-        firebase.database().ref().push().set({
-            user_name: data
+        firebase.database().ref("devices").child("AX001").set({
+            device: "AX001",
+            owner: "sysdev",
+            minTemp: 15,
+            maxTemp: 35
         }, function(error){
             if  (error){
                 alert("Write Data Failed. Error: "+error);
