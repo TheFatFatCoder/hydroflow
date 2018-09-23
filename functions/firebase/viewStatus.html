@@ -1,0 +1,63 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        #tempWarning{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="mainContent">
+        <div>Temperature setting should be >=10 and <=35</div>
+        <input type="number" id="temp" value="15" onkeyup="checkParameter(this.value)" min="10" max="35">
+        <div id="tempWarning"></div><br>
+        <input type="text" id="textInput">
+        <button type="button" onclick="writeData(textInput.value)" id="3submitButton">Change</button>
+    </div>
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyDWX7BJq7uv7KbMwm4b-psUKTGqMnY_FLM",
+    authDomain: "arduino-temp-fdfdf.firebaseapp.com",
+    databaseURL: "https://arduino-temp-fdfdf.firebaseio.com",
+    projectId: "arduino-temp-fdfdf",
+    storageBucket: "arduino-temp-fdfdf.appspot.com",
+    messagingSenderId: "1086503642000"
+    };
+    firebase.initializeApp(config);
+</script>
+<script>
+    function checkParameter(param){
+    const submitButton = document.getElementById("submitButton");
+    const tempWarning = document.getElementById("tempWarning");
+        if  (param<10){
+            submitButton.disabled = true;
+            tempWarning.innerHTML = "Something isn't right here";
+        }else{
+            submitButton.disabled = false;
+            tempWarning.innerHTML = "";
+        }
+    }
+
+    function writeData(data){
+        firebase.database().ref().push().set({
+            user_name: data
+        }, function(error){
+            if  (error){
+                alert("Write Data Failed. Error: "+error);
+            }else{
+                alert("Write Success")
+            }
+        });   
+    }
+</script>
+</body>
+</html>
