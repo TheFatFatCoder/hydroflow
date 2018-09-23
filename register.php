@@ -67,40 +67,62 @@
     <!-- Horizontal Form -->
     <div class="box box-info col-md-offset-4">
     <div class="box-header with-border">
-        <h3 class="box-title">Login</h3>
+        <h3 class="box-title">Register</h3>
     </div>
     <!-- /.box-header -->
     <!-- form start -->
     <form class="form-horizontal">
         <div class="box-body">
-	        <div class="form-group">
-	            <label for="inputID" class="col-sm-2 control-label">ID</label>
+          <div class="form-group">
+            <label for="inputFirstname" class="col-sm-2 control-label">Firstname</label>
 
-	            <div class="col-sm-10">
-	            <input type="text" class="form-control" id="inputID" placeholder="Email/Username">
-	            </div>
-	        </div>
-	        <div class="form-group">
-	            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputFirstname" placeholder="Firstname">
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="inputLastname" class="col-sm-2 control-label">Lastname</label>
 
-	            <div class="col-sm-10">
-	            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-	            </div>
-	        </div>
-	        <div class="form-group">
-	            <div class="col-sm-offset-2 col-sm-10">
-	            <div class="checkbox">
-	                <label>
-	                <input type="checkbox"> Remember me
-	                </label>
-	            </div>
-	            </div>
-	        </div>
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputLastname" placeholder="Lastname">
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+
+              <div class="col-sm-10">
+              <input type="text" class="form-control" id="inputUsername" placeholder="Username" onkeyup="checkValidUsername()">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+
+              <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+
+              <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="inputConfirmPassword" class="col-sm-2 control-label">Confirm Password</label>
+
+              <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Confirm Password" onkeyup="checkValidPassword()">
+              </div>
+          </div>
+          <div class="form-check">
+              <label class="col-sm-2 control-label" ID="validationLabel" style="color: red;"></label>
+          </div>
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
         <button type="submit" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-info pull-right">Sign in</button>
+        <button type="submit" class="btn btn-info pull-right">Register</button>
         </div>
         <!-- /.box-footer -->
     </form>
@@ -109,5 +131,26 @@
     <!-- general form elements disabled -->
     </section>
     </div>
+<script>
+  //Check Username
+  function checkValidUsername() {
+    var checkUsername = document.getElementById("inputUsername").value;
+    if (checkUsername=="abc") {
+      document.getElementById("validationLabel").innerHTML = "Invalid Username";
+    }else{
+      document.getElementById("validationLabel").innerHTML = "";
+    }
+  }
+    //Check Confirm Password
+    function checkValidPassword(){
+      var checkPassword = document.getElementById("inputPassword").value
+      var checkConfirmPassword = document.getElementById("inputConfirmPassword").value;
+      if (checkConfirmPassword==checkPassword) {
+        document.getElementById("validationLabel").innerHTML = "";
+      }else{
+        document.getElementById("validationLabel").innerHTML = "Mismatch Password";
+      }
+    }
+</script>
 </body>
 </html>
