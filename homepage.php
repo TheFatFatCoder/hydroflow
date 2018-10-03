@@ -71,7 +71,7 @@
             <span class="info-box-icon bg-aqua"><i class="fa fa-tint"></i></span>
             <div class="info-box-content">
               <span class="info-box-text">Temperature (°C)</span>
-              <span id="temperatureInfo" class="info-box-number">19</span>
+              <span id="temperatureInfo" class="info-box-number">---</span>
             </div>
           </div>
         </div>
@@ -81,7 +81,7 @@
             <span class="info-box-icon bg-yellow"><i class="fa fa-sun-o"></i></span>
             <div class="info-box-content">
               <span class="info-box-text">Light (hours)</span>
-              <span id="lightHrsInfo" class="info-box-number">8</span>
+              <span id="lightHrsInfo" class="info-box-number">---</span>
             </div>
           </div>
         </div>
@@ -91,7 +91,7 @@
             <span class="info-box-icon bg-green"><i class="fa fa-flask"></i></span>
             <div class="info-box-content">
               <span class="info-box-text"><!--Nutrition (PPM)-->Light Status</span>
-              <span id="lightStatusInfo" class="info-box-number"><!--1032-->OFF</span>
+              <span id="lightStatusInfo" class="info-box-number"><!--1032-->---</span>
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@
 <script>
   var status = null;
   
-  init(document, "AX001");
+  fetchAll(document, "AX001");
   listenAll(document, "AX001");
 </script>
 

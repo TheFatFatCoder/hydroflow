@@ -1,14 +1,13 @@
 function fetchAll(item, device_id){
     var ref = firebase.database().ref('devices').child(device_id);
     ref.once('value', function(snapshot){
-      status = snapshot.val();
       const temperatureInfo = item.getElementById("temperatureInfo");
       const lightHrsInfo = item.getElementById("lightHrsInfo");
       const lightStatusInfo = item.getElementById("lightStatusInfo");
-      
-      var currTemp = status.currTemp.split("=")[1];
-      var totalLight = status.totalLight.split("=")[1];
-      var currLight = status.currLight.split("=")[1];
+      console.log(snapshot.val());
+      var currTemp = snapshot.val().currTemp.split("=")[1];
+      var totalLight = snapshot.val().totalLight.split("=")[1];
+      var currLight = snapshot.val().currLight.split("=")[1];
       if  (currTemp == "null")
           temperatureInfo.innerHTML = "N/A";
       else

@@ -178,7 +178,6 @@
       <!-- /.box -->
     </section>
     <!-- /.content -->
-  </div>
 </div>
 <!-- ./wrapper -->
 
