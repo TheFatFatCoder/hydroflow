@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>HydroFlow</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -33,11 +34,21 @@
 
   <link rel="stylesheet" href="./bootstrap-clockpicker/css/bootstrap-material-datetimepicker.css">
 
+  <!-- Header Section -->
   <!-- Banner Extra Space -->
-  <link rel="stylesheet" href="dist/css/banner.css">
+  <link rel="stylesheet" href="dist/css/header.css">
 
   <!-- Scroll Section-->
   <link rel="stylesheet" href="scroll/scroll.css">
+
+  <!-- Banner Extra Space -->
+  <link rel="stylesheet" href="dist/css/banner.css">
+
+  <!-- Marketing Video Content -->
+  <link rel="stylesheet" href="dist/css/markvid.css">
+
+  <!-- Contact Us Section -->
+  <link rel="stylesheet" href="dist/css/contactus.css">
 
 </head>
 
@@ -47,46 +58,47 @@
 <header>
 	<div class="row">
 		<div class="col-md-12 col-xs-12 col-sm-12">
-			<img src="dist/img/2.jpg" class="col-xs-12" style="z-index: -2; padding: 0;">
+			<img src="dist/img/plantHead.jpg" class="col-xs-12" id="imghead">
 			<div id="connectButton" class="Connect">
-				<a href="homepage.php" class="btn">Connect To Plant</a>
+				<a href="homepage.php" class="btn" id="headerbtn">Connect To Plant</a>
 			</div>
 			<div id="scrollHeader" class="ScrollDown">
-				<a href="#content" id="scrollButton"><span></span></a>
+				<a href="#banner" id="scrollButton"><span></span></a>
 			</div>
 		</div>
 	</div>
 </header>
 
   <!-- Hydroponic Essentials Content -->
+<!--
   <section id="content">
     <div class="row">
-    	<div class="col-xs-12">
-    		<img src="dist/img/1.jpg" class="col-xs-6" style="left: 0; padding: 0;">
-    		<div class="col-xs-6">
-    			<h3>
-	    			Input Title Here
-	    		</h3>
-	    		<p>
-	    			Input Paragraph Here
-	    		</p>
-    		</div>
-    	</div>
+		<div class="col-md-6 col-xs-12">
+			<div class="col-md-offset-2" style="padding: 40px">
+				<h2>
+    				Input Title Here
+	    		</h2>
+			</div>
+		</div>
+		<img src="dist/img/blacksolid.jpg" class="col-md-6 col-xs-12" style="left: 0; padding: 0;">
     </div>
     <div class="row">
-    	<div class="col-xs-12">
-    		<div class="col-xs-6">
-    			<h3>
-	    			Input Title Here
-	    		</h3>
-	    		<p>
+		<div class="col-md-7 col-xs-12">
+			<div class="col-md-offset-4 col-xs-offset-2" style="padding: 40px">
+				<h2>
+    				Input Title Here
+	    		</h2>
+			</div>
+			<div class="col-md-offset-2 col-xs-offset-1">
+				<p>
 	    			Input Paragraph Here
 	    		</p>
-    		</div>
-    		<img src="dist/img/3.jpg" class="col-xs-6" style="right: 0; padding: 0;">
-    	</div>
+			</div>
+		</div>
+		<img src="dist/img/blacksolid.jpg" class="col-md-5 col-xs-12" style="right: 0; padding: 0;">
     </div>
   </section>
+-->
 
   <!-- Extra Space Content -->
   <section id="banner">
@@ -95,8 +107,8 @@
         <div class="row">
           <div class="banner-info">
             <div class="banner-text text-center">
-              <h1>Lorem ipsum dolor sit amet</h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+              <h1 id="fontHeader">"Great yield comes with great technology"</h1>
+              <p>-Hydroflow 2018</p>
             </div>
           </div>
         </div>
@@ -105,7 +117,7 @@
   </section>
 
   <!-- About Content -->
-  <section style="background-color: #e5e5e5">
+  <section id="about">
     <div class="col-xs-12">
       <h1>
         About  
@@ -126,20 +138,20 @@
     </div>
     <!-- Marketing Video -->
     <div class="row">
-      <div class="col-xs-12" style="text-align: center">
-        <img src="dist/img/vidimage.png" style="height: 300px; padding-top: 50px">
+      <div class="col-xs-12" id="box">
+        <img src="dist/img/vidimage.png" id="vidlayout">
       </div>
     </div>
-    <div class="row" style="height: 100px">
+    <div class="row" id="brspc">
     </div>
   </section>
 
   <!-- Contact Us Section -->
   <section>
-    <div class="col-xs-12" style="background-color: #091c00; text-align: center; padding-bottom: 100px;">
+    <div class="col-xs-12" id="bg-color">
       <div class="row">
         <div class="col-xs-12">
-          <h1 style="text-align: center; padding-top: 100px; padding-bottom: 50px; color: grey;">
+          <h1 class="fontheader">
             Get In Touch With Us
           </h1>
         </div>
@@ -147,12 +159,12 @@
       <div class="row">
         <!-- Name Box -->
         <div class="row">
-          <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" style="float: left">
-            <input type="text" class="form-control" placeholder="Your Name*" style="border: 0; outline: 0; background-color: transparent; border-bottom: 1px solid grey; color: white;">
+          <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="infoheader">
+            <input type="text" class="form-control" placeholder="Your Name*" id="info-content">
           </div>
         <!-- Email Box -->
-          <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" style="float:left; position: relative;">
-              <input type="email" class="form-control" placeholder="Your Email*" style="border: 0; outline: 0; background-color: transparent; border-bottom: 1px solid grey; color: white;">
+          <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="mailheader">
+              <input type="email" class="form-control" placeholder="Your Email*" id="info-content">
           </div>
         </div>
         <br/>
@@ -160,15 +172,15 @@
         <!-- Subject Box -->
         <div class="row">
           <div class="input-group col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-            <input type="text" class="form-control" placeholder="Your Message" style="border: 0; outline: 0; background-color: transparent; border-bottom: 1px solid grey; color: white;">
+            <input type="text" class="form-control" placeholder="Your Message" id="info-content">
           </div>
         </div>
         <br/><br/>
 
         <!-- Send Button-->
-        <div class="row" style="text-align: center;">
+        <div class="row" id="sendheader">
           <div class="col-xs-12">
-            <button type="button" class="btn bg-white margin" style="border-radius: 4px; font-size: small; padding-left: 50px; padding-right: 50px;">Get In Touch</button>
+            <button type="button" class="btn" id="sendbtn">Get In Touch</button>
           </div>
         </div>
       </div>

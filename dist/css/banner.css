@@ -1,19 +1,23 @@
 #banner{
-	height: 250px;
-	background: url('../img/photo2.png') no-repeat fixed;
+	height: 200px;
+	background: url('../img/2.jpg') no-repeat fixed;
 	background-size: cover;
 	position: relative;
 }
 .bg-color{
-	height: 250px;
-	background-color: RGBA(7, 84, 42, 0.78);
+	height: 200px;
+	background-color: RGBA(0, 166, 90, 0.5);
 }
 .banner-info{
-	padding-top: 30px;
+	padding-top: 40px;
 }
 .banner-logo img{
 	display: inline-block;
 }
 .banner-text{
-	color: #fff;
+	color: #222d32;
+}
+
+#fontHeader{
+	font-size:4vw;
 }

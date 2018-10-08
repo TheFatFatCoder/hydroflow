@@ -1,0 +1,9 @@
+#imghead{
+	z-index: -2;
+	padding: 0;
+}
+
+#headerbtn{
+	background-color: #f39c12;
+	font-size: 30px;
+}
