@@ -107,7 +107,7 @@
         <div class="row">
           <div class="banner-info">
             <div class="banner-text text-center">
-              <h1 id="fontHeader">"Great yield comes with great technology"</h1>
+              <h1 id="fontHeader">"With great technology comes great yield"</h1>
               <p>-Hydroflow 2018</p>
             </div>
           </div>
