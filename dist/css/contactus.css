@@ -28,6 +28,16 @@
 	color: white;
 }
 
+#content-message{
+	border: 0;
+	outline: 0;
+	background-color: transparent;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
+	color: white;
+	height: 100px;
+}
+
 #sendheader{
 	text-align: center;
 }

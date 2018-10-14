@@ -148,41 +148,50 @@
 
   <!-- Contact Us Section -->
   <section>
-    <div class="col-xs-12" id="bg-color">
-      <div class="row">
-        <div class="col-xs-12">
-          <h1 class="fontheader">
-            Get In Touch With Us
-          </h1>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Name Box -->
+    <form action="feedback.php" method="POST">
+      <div class="col-xs-12" id="bg-color">
         <div class="row">
-          <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="infoheader">
-            <input type="text" class="form-control" placeholder="Your Name*" id="info-content">
-          </div>
-        <!-- Email Box -->
-          <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="mailheader">
-              <input type="email" class="form-control" placeholder="Your Email*" id="info-content">
-          </div>
-        </div>
-        <br/>
-        <br/>
-        <!-- Subject Box -->
-        <div class="row">
-          <div class="input-group col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-            <input type="text" class="form-control" placeholder="Your Message" id="info-content">
-          </div>
-        </div>
-        <br/><br/>
-
-        <!-- Send Button-->
-        <div class="row" id="sendheader">
           <div class="col-xs-12">
-            <button type="button" class="btn" id="sendbtn">Get In Touch</button>
+            <h1 class="fontheader">
+              Get In Touch With Us
+            </h1>
           </div>
         </div>
+        <div class="row">
+            <!-- Name Box -->
+          <div class="row">
+            <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="infoheader">
+              <input type="text" class="form-control" placeholder="Your Name*" id="info-content" name="inputName">
+            </div>
+            <!-- Email Box -->
+            <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="mailheader">
+                <input type="email" class="form-control" placeholder="Your Email*" id="info-content" name="inputEmail">
+            </div>
+          </div>
+          <br/>
+          <br/>
+          <!-- Subect Box -->
+          <div class="row">
+            <div class="input-group col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="mailheader">
+                <input type="text" class="form-control" placeholder="Subject*" id="info-content" name="inputSubject">
+            </div>
+          </div>
+          <br/>
+          <!-- Message Box -->
+          <div class="row">
+            <div class="input-group col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
+              <textarea type="text" class="form-control" placeholder="Your Message" id="content-message" name="inputMessage"></textarea>
+            </div>
+          </div>
+          <br/><br/>
+
+          <!-- Send Button-->
+          <div class="row" id="sendheader">
+            <div class="col-xs-12">
+              <input type="submit" value="Send Message" class="btn" id="sendbtn"/>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </section>
