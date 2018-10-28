@@ -58,20 +58,10 @@
         <!-- Duration Data Detail -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-hourglass-half"></i></span>
+            <span class="info-box-icon bg-green"><i class="glyphicon glyphicon-time"></i></span>
             <div class="info-box-content">
               <span class="info-box-text">Duration (Days)</span>
               <span class="info-box-number">12</span>
-            </div>
-          </div>
-        </div>
-        <!-- Temp Data Detail -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-tint"></i></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Temperature (°C)</span>
-              <span id="temperatureInfo" class="info-box-number">---</span>
             </div>
           </div>
         </div>
@@ -80,18 +70,28 @@
           <div class="info-box">
             <span class="info-box-icon bg-yellow"><i class="fa fa-sun-o"></i></span>
             <div class="info-box-content">
-              <span class="info-box-text">Light (hours)</span>
+              <span class="info-box-text">Light Status</span>
               <span id="lightHrsInfo" class="info-box-number">---</span>
             </div>
           </div>
         </div>
-        <!-- Nutrition Data Detail -->
+        <!-- Temp Data Detail -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-flask"></i></span>
+            <span class="info-box-icon bg-blue"><i class="fa fa-thermometer"></i></span>
             <div class="info-box-content">
-              <span class="info-box-text"><!--Nutrition (PPM)-->Light Status</span>
-              <span id="lightStatusInfo" class="info-box-number"><!--1032-->---</span>
+              <span class="info-box-text">Temperature (°C)</span>
+              <span id="temperatureInfo" class="info-box-number">---</span>
+            </div>
+          </div>
+        </div>
+        <!-- Water Level Detail -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-aqua"><i class="fa fa-tint"></i></span>
+            <div class="info-box-content">
+              <span class="info-box-text">Water Level</span>
+              <span id="waterLevelInfo" class="info-box-number">---</span>
             </div>
           </div>
         </div>
@@ -134,27 +134,11 @@
           <!-- AREA CHART -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Light Chart (hours)</h3>
+              <h3 class="box-title">Light Chart</h3>
             </div>
             <div class="box-body">
               <div class="chart">
                 <canvas id="areaChartII" style="height:100px"></canvas>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Nutrition Chart -->
-      <div class="row">
-        <div class="col-md-12">
-          <!-- AREA CHART -->
-          <div class="box box-success">
-            <div class="box-header with-border">
-              <h3 class="box-title">Nutrition Chart (PPM)</h3>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="areaChartIII" style="height:100px"></canvas>
               </div>
             </div>
           </div>
@@ -310,7 +294,7 @@
           pointStrokeColor    : 'rgba(255 , 133, 27, 1)',
           pointHighlightFill  : '#fff',
           pointHighlightStroke: 'rgba(255 , 133, 27, 1)',
-          data                : [0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 5, 6, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8]
+          data                : [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1]
         }
       ]
     }
@@ -356,78 +340,6 @@
 
     //Create the line chart
     areaChartII.Line(areaChartDataII, areaChartOptionsII)
-
-    //-------------
-  })
-</script>
-<script>
-  $(function () {
-    //--------------
-    //- AREA CHART -
-    //--------------
-
-    // Get context with jQuery - using jQuery's .get() method.
-    var areaChartCanvasIII = $('#areaChartIII').get(0).getContext('2d')
-    // This will get the first returned node in the jQuery collection.
-    var areaChartIII       = new Chart(areaChartCanvasIII)
-
-    var areaChartDataIII = {
-      labels  : ['00.00', '01.00', '02.00', '03.00', '04.00', '05.00', '06.00', '08.00', '09.00', '10.00', '11.00', '12.00', '13.00', '14.00', '15.00', '16.00', '17.00', '18.00', '19,00', '20.00', '21.00', '22.00', '23.00'],
-      datasets: [
-        {
-          label               : 'Nutrition',
-          fillColor           : 'rgba(0, 100, 32, 0.6)',
-          strokeColor         : 'rgba(210, 214, 222, 1)',
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [1020, 1024, 1015, 1000, 1006, 1030, 1020, 1025, 1030, 1035, 1023, 1034, 1023, 1022, 1020, 1015, 1021, 1022, 1020, 1017, 1010, 1005, 1004, 1032]
-        }
-      ]
-    }
-
-    var areaChartOptionsIII = {
-      //Boolean - If we should show the scale at all
-      showScale               : true,
-      //Boolean - Whether grid lines are shown across the chart
-      scaleShowGridLines      : false,
-      //String - Colour of the grid lines
-      scaleGridLineColor      : 'rgba(0,0,0,.05)',
-      //Number - Width of the grid lines
-      scaleGridLineWidth      : 1,
-      //Boolean - Whether to show horizontal lines (except X axis)
-      scaleShowHorizontalLines: true,
-      //Boolean - Whether to show vertical lines (except Y axis)
-      scaleShowVerticalLines  : true,
-      //Boolean - Whether the line is curved between points
-      bezierCurve             : true,
-      //Number - Tension of the bezier curve between points
-      bezierCurveTension      : 0.3,
-      //Boolean - Whether to show a dot for each point
-      pointDot                : false,
-      //Number - Radius of each point dot in pixels
-      pointDotRadius          : 4,
-      //Number - Pixel width of point dot stroke
-      pointDotStrokeWidth     : 1,
-      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
-      pointHitDetectionRadius : 20,
-      //Boolean - Whether to show a stroke for datasets
-      datasetStroke           : true,
-      //Number - Pixel width of dataset stroke
-      datasetStrokeWidth      : 2,
-      //Boolean - Whether to fill the dataset with a color
-      datasetFill             : true,
-      //String - A legend template
-      legendTemplate          : '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
-      //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-      maintainAspectRatio     : true,
-      //Boolean - whether to make the chart responsive to window resizing
-      responsive              : true
-    }
-
-    //Create the line chart
-    areaChartIII.Line(areaChartDataIII, areaChartOptionsIII)
 
     //-------------
   })

@@ -74,10 +74,9 @@
               </div>
               <div class="row">
                 <div class="col-md-1 col-xs-4" style="text-align: center">
-                    <span style="padding-left: 25%"></span>
-                    <img src="dist\img\temperature.svg" height="40px" width="40px">
+                    <span class="info-box-icon bg-blue col-md-offset-2 col-xs-offset-4"><i class="fa fa-thermometer"></i></span>
                 </div>
-                <div class="col-md-11 col-xs-8 pull-right">
+                <div class="col-md-10 col-xs-7 pull-right">
                     <div class="progress xs">
                     <div class="progress-bar progress-bar-blue" style="width: 20%;"></div>
                   </div>
@@ -110,10 +109,9 @@
               </div>
               <div class="row">
                 <div class="col-md-1 col-xs-4" style="text-align: center">
-                    <span style="padding-left: 25%"></span>
-                    <img src="dist\img\creativity.svg" width="40px" height="40px">
+                    <span class="info-box-icon bg-yellow col-md-offset-2 col-xs-offset-4"><i class="fa fa-sun-o"></i></span>
                 </div>
-                <div class="col-md-11 col-xs-8 pull-right">
+                <div class="col-md-10 col-xs-7 pull-right">
                     <div class="progress xs">
                     <div class="progress-bar progress-bar-yellow" style="width: 50%;"></div>
                   </div>
@@ -130,42 +128,6 @@
             </div>
           </div>
          
-        </div>
-      </div>
-
-
-      <div class="box box-solid bg-white-gradient">
-        <!-- Nutrition PPM Box-->
-        <div class="box-footer text-black">
-          <div class="row">
-            <div class="col-xs-12">
-              <!-- Progress bars -->
-              <div class="clearfix">
-                <span class="col-md-1 col-xs-4" style="text-align: center">Nutrition</span>
-                <small class="pull-right">1200ppm</small>
-              </div>
-              <div class="row">
-                <div class="col-md-1 col-xs-4" style="text-align: center">
-                    <span style="padding-left: 25%"></span>
-                    <img src="dist\img\flask.svg" width="40px" height="40px">
-                </div>
-                <div class="col-md-11 col-xs-8 pull-right">
-                    <div class="progress xs">
-                    <div class="progress-bar progress-bar-green" style="width: 50%;"></div>
-                  </div>
-                </div>
-              <div class="row">
-                <div class="col-md-1 col-md-offset-4 col-xs-3 col-xs-offset-1">
-                  <input type="text" class="form-control" data-inputmask='"mask": "9999"' data-mask placeholder="Min" style="font-size: small;">
-                </div>
-                <div class="col-md-1 col-xs-3">
-                  <input type="text" class="form-control" data-inputmask='"mask": "9999"' data-mask placeholder="Max" style="font-size: small;">
-                </div>
-              </div>
-              </div>
-            </div>
-          </div>
-          
         </div>
       </div>
 
