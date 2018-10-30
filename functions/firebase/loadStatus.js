@@ -1,5 +1,5 @@
-function fetchAll(item, device_id){
-    var ref = firebase.database().ref('devices').child(device_id);
+function fetchAll(item){
+    var ref = firebase.database().ref();//'devices');
     ref.once('value', function(snapshot){
       const temperatureInfo = item.getElementById("temperatureInfo");
       const lightHrsInfo = item.getElementById("lightHrsInfo");
@@ -26,8 +26,8 @@ function fetchAll(item, device_id){
     });    
   }
 
-function listenAll(item, device_id){
-    var ref = firebase.database().ref('devices').child(device_id);
+function listenAll(item){
+    var ref = firebase.database().ref();
     ref.on('child_changed', function(snapshot){
         var attr = snapshot.val().split("=")[0];
         var res = snapshot.val().split("=")[1];
@@ -47,9 +47,9 @@ function listenAll(item, device_id){
     });
 }
 
-function writeData(data){
-    firebase.database().ref("devices").child("AX001").set({
-        device: "device=AX001",
+function writeData(){
+    firebase.database().ref()./*child("AX001").*/set({
+        device: "device=proto-001",
         owner: "owner=john",
         minTemp:  "minTemp=15",
         maxTemp: "maxTemp=35",
