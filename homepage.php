@@ -156,7 +156,7 @@
 <!-- Realtime Database Function -->
 <script>
   var status = null;
-  writeData();
+  //writeData();
   fetchAll(document);
   listenAll(document);
 </script>
