@@ -1,15 +1,15 @@
 #banner{
-	height: 200px;
+	height: 3%;
 	background: url('../img/2.jpg') no-repeat fixed;
 	background-size: cover;
 	position: relative;
 }
 .bg-color{
-	height: 200px;
+	height: 3%;
 	background-color: RGBA(0, 166, 90, 0.5);
 }
 .banner-info{
-	padding-top: 40px;
+	padding: 20px;
 }
 .banner-logo img{
 	display: inline-block;
@@ -19,5 +19,5 @@
 }
 
 #fontHeader{
-	font-size:4vw;
+	font-size:3vw;
 }

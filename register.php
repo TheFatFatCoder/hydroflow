@@ -47,10 +47,10 @@
   <link rel="stylesheet" href="./bootstrap-clockpicker/css/bootstrap-material-datetimepicker.css">
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-  <div class="wrapper">
+<body class="skin-blue">
+  <div class="wrapper" style="background-color: #f3f2ee">
     <header class='main-header'>
-            <!-- Logo -->
+        <!-- Logo -->
         <a href='' class='logo'>
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class='logo-mini'><b>H</b>FL</span>
@@ -65,10 +65,8 @@
   
     <section class="content col-md-7">
     <!-- Horizontal Form -->
-    <div class="box box-info col-md-offset-4">
-    <div class="box-header with-border">
-        <h3 class="box-title">Register</h3>
-    </div>
+    <h3 class="col-md-offset-9 col-xs-offset-3" style="padding: 30px; font-size: 30px">Register</h3>
+    <div class="box box-success col-md-offset-4">
     <!-- /.box-header -->
     <!-- form start -->
     <form class="form-horizontal">
@@ -121,8 +119,9 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-        <button type="submit" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-info pull-right">Register</button>
+        <a href="index.php" type="submit" class="btn btn-default">Cancel</a>
+        <a href="login.php" type="submit" class="btn btn-default" style="background-color: #f39c12; color: #000">Have an Account?</a>
+        <a href="register.php" type="submit" class="btn btn-default pull-right" style="background-color: #00b260; color: #000">Register</a>
         </div>
         <!-- /.box-footer -->
     </form>

@@ -6,9 +6,10 @@
 		$senderSubject = $_POST['inputSubject'];
 		$senderMessage = $_POST['inputMessage'];
 
+		ini_set('SMTP', 'mailserver');
+		ini_set('smtp_port', 25);
 		//mail(to, subject, txt, header)
 		mail($receiverEmail, $senderSubject, $senderMessage, $senderEmail);
-
 		$response = "Success";
 	}else{
 		$response = "Error";

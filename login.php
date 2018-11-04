@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>HydroFlow | Homepage</title>
+  <title>HydroFlow | Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -47,10 +47,10 @@
   <link rel="stylesheet" href="./bootstrap-clockpicker/css/bootstrap-material-datetimepicker.css">
 
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-  <div class="wrapper">
+<body class="skin-blue">
+  <div class="wrapper" style="background-color: #f3f2ee">
     <header class='main-header'>
-            <!-- Logo -->
+        <!-- Logo -->
         <a href='' class='logo'>
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class='logo-mini'><b>H</b>FL</span>
@@ -63,12 +63,10 @@
         </nav>
     </header>
   
-    <section class="content col-md-7">
+    <section class="content col-md-7" style="color: black">
     <!-- Horizontal Form -->
-    <div class="box box-info col-md-offset-4">
-    <div class="box-header with-border">
-        <h3 class="box-title">Login</h3>
-    </div>
+    <h3 class="col-md-offset-9 col-xs-offset-4" style="padding: 30px; font-size: 30px">Login</h3>
+    <div class="box box-warning col-md-offset-4">
     <!-- /.box-header -->
     <!-- form start -->
     <form class="form-horizontal">
@@ -99,8 +97,9 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-        <button type="submit" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-info pull-right">Sign in</button>
+        <a href="index.php" type="submit" class="btn btn-default">Cancel</a>
+        <a href="register.php" type="submit" class="btn btn-default" style="background-color: #00b260; color: #000">Register An Account</a>
+        <a href="homepage.php" type="submit" class="btn pull-right" style="background-color: #f39c12; color: #000">Sign in</a>
         </div>
         <!-- /.box-footer -->
     </form>

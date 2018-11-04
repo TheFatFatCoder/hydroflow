@@ -52,22 +52,35 @@
 
 </head>
 
-<body>
+<body class="skin-blue">
+	<header class='main-header'>
+            <!-- Logo -->
+        <a href='' class='logo'>
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class='logo-mini'><b>H</b>FL</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class='logo-lg'><b>Hydro</b>Flow</span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class='navbar navbar-static-top'>
+        </a>
+        </nav>
+    </header>
 
 <!-- Header with Scroll-->
-<header>
+<section>
 	<div class="row">
 		<div class="col-md-12 col-xs-12 col-sm-12">
 			<img src="dist/img/plantHead.jpg" class="col-xs-12" id="imghead">
 			<div id="connectButton" class="Connect">
-				<a href="homepage.php" class="btn" id="headerbtn">Connect To Plant</a>
+				<a href="login.php" class="btn" id="headerbtn">Connect To Plant</a>
 			</div>
 			<div id="scrollHeader" class="ScrollDown">
 				<a href="#banner" id="scrollButton"><span></span></a>
 			</div>
 		</div>
 	</div>
-</header>
+</section>
 
   <!-- Hydroponic Essentials Content -->
 <!--
@@ -161,11 +174,11 @@
             <!-- Name Box -->
           <div class="row">
             <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="infoheader">
-              <input type="text" class="form-control" placeholder="Your Name*" id="info-content" name="inputName">
+              <input type="text" class="form-control" placeholder="Your Name*" id="info-content" name="inputName" required="true">
             </div>
             <!-- Email Box -->
             <div class="input-group col-md-3 col-md-offset-2 col-xs-10 col-xs-offset-1" id="mailheader">
-                <input type="email" class="form-control" placeholder="Your Email*" id="info-content" name="inputEmail">
+                <input type="email" class="form-control" placeholder="Your Email*" id="info-content" name="inputEmail" required="true">
             </div>
           </div>
           <br/>
@@ -173,14 +186,14 @@
           <!-- Subect Box -->
           <div class="row">
             <div class="input-group col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1" id="mailheader">
-                <input type="text" class="form-control" placeholder="Subject*" id="info-content" name="inputSubject">
+                <input type="text" class="form-control" placeholder="Subject*" id="info-content" name="inputSubject" required="true">
             </div>
           </div>
           <br/>
           <!-- Message Box -->
           <div class="row">
             <div class="input-group col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
-              <textarea type="text" class="form-control" placeholder="Your Message" id="content-message" name="inputMessage"></textarea>
+              <textarea type="text" class="form-control" placeholder="Your Message" id="content-message" name="inputMessage" required="true"></textarea>
             </div>
           </div>
           <br/><br/>
