@@ -54,7 +54,6 @@
   <div class="content-wrapper" style="text-align: center;">
     <!-- Sensor Current Data Details -->
     <br/>
-    <br/>
     <section class="content" style="text-align: center;">
         <div class="row">
           <!-- Duration Data Detail -->
