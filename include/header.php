@@ -26,14 +26,16 @@
         <li>
 		  <a href='homepage.php'>
 		    <i class='fa fa-tree'></i> <span>Homepage</span>
-		  </a>
+      </a>
+    <!--
 		</li>
         <li>
           <a href='config.php'>
             <i class='fa fa-cog'></i> <span>Sensor Configuration</span>
           </a>
         </li>
-		<li>
+    <li>
+    -->
 		  <a href='settings.php'>
 		    <i class='fa fa-wrench'></i> <span>Settings</span>
 		  </a>
