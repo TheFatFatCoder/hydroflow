@@ -1,6 +1,8 @@
 function fetchAll(item){
     var ref = firebase.database().ref();//'devices');
     ref.once('value', function(snapshot){
+        /*
+        console.log(snapshot);
         var attr = snapshot.val().split("=")[0];
         var res = snapshot.val().split("=")[1];
         
@@ -22,9 +24,44 @@ function fetchAll(item){
             case "lastTransmission": if (res=="null")lastTransmissionInfo.innerHTML ="Never"; else lastTransmissionInfo.innerHTML = res;
                     break;
         } 
+        */
+        const temperatureInfo = item.getElementById("temperatureInfo");
+        const fanStatusInfo = item.getElementById("fanStatusInfo");
+        const lightStatusInfo = item.getElementById("lightStatusInfo");
+        const waterLevelInfo = item.getElementById("waterLevelInfo");
+        const lastTransmissionInfo = item.getElementById("lastTransmissionInfo");
+        console.log(snapshot.val());
+        var currTemp = snapshot.val().currTemp.split("=")[1];
+        var lightStatus = snapshot.val().lightStatus.split("=")[1];
+        var fanStatus = snapshot.val().fanStatus.split("=")[1];
+        var lastTransmission = snapshot.val().lastTransmission.split("=")[1];
+        var waterLevel = snapshot.val().waterLevel.split("=")[1];
+        if      (currTemp == "null")
+                temperatureInfo.innerHTML = "N/A";
+        else
+                temperatureInfo.innerHTML = currTemp;
+
+        if      (lightStatus == "null")
+                lightStatusInfo.innerHTML = "N/A";
+        else 
+                lightStatusInfo.innerHTML = lightStatus;
+
+        if      (fanStatus == "null")
+                fanStatusInfo.innerHTML = "N/A";
+        else
+                fanStatusInfo.innerHTML = fanStatus;
+
+        if      (lastTransmission=="null")
+                lastTransmissionInfo.innerHTML ="Never"; 
+        else 
+                lastTransmissionInfo.innerHTML = lastTransmission;
+
+        if      (waterLevel=="null")
+                waterLevelInfo.innerHTML ="N/A"; 
+        else 
+                waterLevelInfo.innerHTML = waterLevel;
     });
 }
->>>>>>> 2008099c7789289d3d728d14a4e4ba43dbb8c942
 
 function listenAll(item){
     var ref = firebase.database().ref();
@@ -36,10 +73,7 @@ function listenAll(item){
         const fanStatusInfo = item.getElementById("fanStatusInfo");
         const lightStatusInfo = item.getElementById("lightStatusInfo");
         const waterLevelInfo = item.getElementById("waterLevelInfo");
-<<<<<<< HEAD
-=======
         const lastTransmissionInfo = item.getElementById("lastTransmissionInfo");
->>>>>>> 2008099c7789289d3d728d14a4e4ba43dbb8c942
 
         switch  (attr){
             case "currTemp": if (res=="null")temperatureInfo.innerHTML ="N/A"; else temperatureInfo.innerHTML = res;
@@ -68,15 +102,10 @@ function writeData(){
         totalLight: "totalLight=16",
         currTemp: "currTemp=null",
         currLight: "currLight=null",
-<<<<<<< HEAD
-        waterLevel: "waterLevel=null"
-=======
         lightStatus: "lightStatus=null",
         fanStatus : "fanStatus=null",
         waterLevel: "waterLevel=null",
         lastTransmission: "lastTransmission=null"
->>>>>>> 2008099c7789289d3d728d14a4e4ba43dbb8c942
-
     }, function(error){
         if  (error){
             alert("Write Data Failed. Error: "+error);
