@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>HydroFlow | Homepage</title>
+  <title>My Kit</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -43,7 +43,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   <link rel="stylesheet" href="./bootstrap-clockpicker/css/bootstrap-material-datetimepicker.css">
-  <!--<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>-->
+
   <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
   <script src="./functions/firebase/config.js"></script>
   <script src="./functions/firebase/loadStatus.js"></script>
@@ -51,103 +51,130 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
   <?php echo $navbar; ?>
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="text-align: center;">
     <!-- Sensor Current Data Details -->
     <br/>
-    <section class="content">
-      <div class="row">
-        <!-- Duration Data Detail -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="glyphicon glyphicon-time"></i></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Duration (Days)</span>
-              <span class="info-box-number">12</span>
+    <br/>
+    <section class="content" style="text-align: center;">
+        <div class="row">
+          <!-- Duration Data Detail -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-red"><i class="glyphicon glyphicon-time"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Last Transmission</span>
+                <span id="lastTransmissionInfo" class="info-box-number">---</span>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Light Data Detail -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="fa fa-sun-o"></i></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Light Status</span>
-              <span id="lightHrsInfo" class="info-box-number">---</span>
+
+        <div class="row">
+          <!-- Light Data Detail -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-yellow"><i class="fa fa-sun-o"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Light Status</span>
+                <span id="lightStatusInfo" class="info-box-number">---</span>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Temp Data Detail -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-blue"><i class="fa fa-thermometer"></i></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Temperature (°C)</span>
-              <span id="temperatureInfo" class="info-box-number">---</span>
+      
+        <div class="row">
+          <!-- Fan Data Detail -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-green"><i class="fa fa-snowflake-o"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Fan Status</span>
+                <span id="fanStatusInfo" class="info-box-number">---</span>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Water Level Detail -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-tint"></i></span>
-            <div class="info-box-content">
-              <span class="info-box-text">Water Level</span>
-              <span id="waterLevelInfo" class="info-box-number">---</span>
+
+        <div class="row">
+          <!-- Temp Data Detail -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-blue"><i class="fa fa-thermometer"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Temperature (°C)</span>
+                <span id="temperatureInfo" class="info-box-number">---</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="row">
+          <!-- Water Level Detail -->
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua"><i class="fa fa-tint"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text">Water Level</span>
+                <span id="waterLevelInfo" class="info-box-number">---</span>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
       <br/>
 
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Sensor Charts
-      </h1>
-    </section>
+    <!-- Sensor Charts -->  
+    <div style="display: none;">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Sensor Charts
+        </h1>
+      </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <!-- Temp Chart -->
-      <div class="row">
-        <div class="col-md-12">
-          <!-- AREA CHART -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">Temperature Chart (°C)</h3>
-              <!--
-              <div class="box-tools pull-right">
-                <small class="label pull-right bg-blue" style="margin-right: 5px;">Temp</small>
+      <!-- Main content -->
+      <section class="content">
+        <!-- Temp Chart -->
+        <div class="row">
+          <div class="col-md-12">
+            <!-- AREA CHART -->
+            <div class="box box-primary">
+              <div class="box-header with-border">
+                <h3 class="box-title">Temperature Chart (°C)</h3>
+                <!--
+                <div class="box-tools pull-right">
+                  <small class="label pull-right bg-blue" style="margin-right: 5px;">Temp</small>
+                </div>
+                -->
               </div>
-              -->
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="areaChart" style="height:100px"></canvas>
+              <div class="box-body">
+                <div class="chart">
+                  <canvas id="areaChart" style="height:100px"></canvas>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Light Chart -->
-      <div class="row">
-        <div class="col-md-12">
-          <!-- AREA CHART -->
-          <div class="box box-warning">
-            <div class="box-header with-border">
-              <h3 class="box-title">Light Chart</h3>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="areaChartII" style="height:100px"></canvas>
+        <!-- Light Chart -->
+        <div class="row">
+          <div class="col-md-12">
+            <!-- AREA CHART -->
+            <div class="box box-warning">
+              <div class="box-header with-border">
+                <h3 class="box-title">Light Chart</h3>
+              </div>
+              <div class="box-body">
+                <div class="chart">
+                  <canvas id="areaChartII" style="height:100px"></canvas>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </section>
-  </section>
-
+    </div>
+    <!-- /. charts -->
   </div>
   <!-- /.content-wrapper -->
 </div>
