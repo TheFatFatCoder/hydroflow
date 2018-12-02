@@ -49,7 +49,7 @@
 
   <!-- Contact Us Section -->
   <link rel="stylesheet" href="dist/css/contactus.css">
-
+  <?php echo $urlBarColor; ?>
 </head>
 
 <body class="skin-blue">

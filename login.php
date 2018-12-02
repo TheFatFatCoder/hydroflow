@@ -45,7 +45,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
   <link rel="stylesheet" href="./bootstrap-clockpicker/css/bootstrap-material-datetimepicker.css">
-
+  <?php echo $urlBarColor; ?>
 </head>
 <body class="skin-blue">
   <div class="wrapper" style="background-color: #f3f2ee">
