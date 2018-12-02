@@ -60,4 +60,8 @@
   </header>
 	";
 
+
+  $urlBarColor = "
+    <meta name='theme-color' content='#3c8dbc' />
+  ";
 ?>

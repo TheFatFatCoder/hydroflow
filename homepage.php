@@ -47,6 +47,7 @@
   <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
   <script src="./functions/firebase/config.js"></script>
   <script src="./functions/firebase/loadStatus.js"></script>
+  <?php echo $urlBarColor; ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
