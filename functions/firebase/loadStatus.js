@@ -43,14 +43,20 @@ function fetchAll(item){
 
         if      (lightStatus == "null")
                 lightStatusInfo.innerHTML = "N/A";
-        else 
-                lightStatusInfo.innerHTML = lightStatus;
-
+        else    {
+                if      (lightStatus==1)
+                        lightStatusInfo.innerHTML = "ON";
+                else    
+                        lightStatusInfo.innerHTML = "OFF";
+        }
         if      (fanStatus == "null")
                 fanStatusInfo.innerHTML = "N/A";
-        else
-                fanStatusInfo.innerHTML = fanStatus;
-
+        else    {
+                if      (fanStatus==1)
+                        fanStatusInfo.innerHTML = "ON";
+                else
+                        fanStatusInfo.innerHTML = "OFF";
+        }
         if      (lastTransmission=="null")
                 lastTransmissionInfo.innerHTML ="Never"; 
         else 
