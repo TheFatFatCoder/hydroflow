@@ -44,7 +44,7 @@
 
   <link rel="stylesheet" href="./bootstrap-clockpicker/css/bootstrap-material-datetimepicker.css">
 
-  <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
   <script src="./functions/firebase/config.js"></script>
   <script src="./functions/firebase/loadStatus.js"></script>
 </head>

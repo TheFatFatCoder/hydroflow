@@ -78,9 +78,9 @@ function listenAll(item){
         switch  (attr){
             case "currTemp": if (res=="null")temperatureInfo.innerHTML ="N/A"; else temperatureInfo.innerHTML = res;
                     break;
-            case "lightStatus": if (res=="null")lightStatusInfo.innerHTML ="N/A"; else lightStatusInfo.innerHTML = res;
+            case "lightStatus": if (res=="null")lightStatusInfo.innerHTML ="N/A"; else { if (res==1)lightStatusInfo.innerHTML = "ON"; else lightStatusInfo.innerHTML ="OFF";};
                     break;
-            case "fanStatus": if (res=="null")fanStatusInfo.innerHTML ="N/A"; else fanStatusInfo.innerHTML = res;
+            case "fanStatus": if (res=="null")fanStatusInfo.innerHTML ="N/A"; else { if (res==1)fanStatusInfo.innerHTML = "ON"; else fanStatusInfo.innerHTML ="OFF";};
                     break;
             case "waterLevel": if (res=="null")waterLevelInfo.innerHTML ="N/A"; else waterLevelInfo.innerHTML = res;
                     break;
